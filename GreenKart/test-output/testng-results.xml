@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="2" total="7" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-01T21:05:14 IST" name="AutomationSuite" finished-at="2023-07-01T21:05:15 IST" duration-ms="1090">
+    <groups>
+    </groups>
+    <test started-at="2023-07-01T21:05:14 IST" name="GreenKartE2EFlow" finished-at="2023-07-01T21:05:15 IST" duration-ms="1090">
+      <class name="com.greenkart.tests.HomePageTests">
+        <test-method signature="validatingTitle()[pri:1, instance:com.greenkart.tests.HomePageTests@51e69659]" started-at="2023-07-01T21:05:14 IST" name="validatingTitle" finished-at="2023-07-01T21:05:14 IST" duration-ms="57" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatingTitle -->
+        <test-method signature="validateItemsOnHomePage()[pri:2, instance:com.greenkart.tests.HomePageTests@51e69659]" started-at="2023-07-01T21:05:14 IST" name="validateItemsOnHomePage" finished-at="2023-07-01T21:05:14 IST" duration-ms="374" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateItemsOnHomePage -->
+        <test-method signature="validatingSearchFunctionality()[pri:3, instance:com.greenkart.tests.HomePageTests@51e69659]" started-at="2023-07-01T21:05:14 IST" name="validatingSearchFunctionality" finished-at="2023-07-01T21:05:15 IST" duration-ms="213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatingSearchFunctionality -->
+        <test-method signature="validatingAddToCartFunctionality()[pri:4, instance:com.greenkart.tests.HomePageTests@51e69659]" started-at="2023-07-01T21:05:15 IST" name="validatingAddToCartFunctionality" finished-at="2023-07-01T21:05:15 IST" duration-ms="162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatingAddToCartFunctionality -->
+        <test-method signature="validatingCart()[pri:5, instance:com.greenkart.tests.HomePageTests@51e69659]" started-at="2023-07-01T21:05:15 IST" name="validatingCart" finished-at="2023-07-01T21:05:15 IST" duration-ms="215" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatingCart -->
+      </class> <!-- com.greenkart.tests.HomePageTests -->
+      <class name="com.greenkart.driverscript.TestBase">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.greenkart.driverscript.TestBase@1de5f259]" started-at="2023-07-01T21:04:56 IST" name="setup" finished-at="2023-07-01T21:05:14 IST" duration-ms="17585" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.greenkart.driverscript.TestBase@1de5f259]" started-at="2023-07-01T21:05:15 IST" name="tearDown" finished-at="2023-07-01T21:05:15 IST" duration-ms="200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.greenkart.driverscript.TestBase -->
+    </test> <!-- GreenKartE2EFlow -->
+  </suite> <!-- AutomationSuite -->
+</testng-results>
