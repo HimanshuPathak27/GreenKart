@@ -5,6 +5,7 @@
     <classes>
       <class name="com.greenkart.driverscript.TestBase"/>
       <class name="com.greenkart.tests.HomePageTests"/>
+      <class name="com.greenkart.tests.TopDealsPageTests"/>
     </classes>
   </test> <!-- GreenKartE2EFlow -->
 </suite> <!-- AutomationSuite -->

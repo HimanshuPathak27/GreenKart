@@ -11,6 +11,10 @@ import com.greenkart.repository.ObjectRepository;
 
 public class GreenCartHomePage extends TestBase{
 
+	@FindBy(xpath = ObjectRepository.productNameXpath)
+	@CacheLookup
+	List<WebElement> productName;
+
 	@FindBy(xpath = ObjectRepository.searchboxXpath)
 	@CacheLookup
 	WebElement searchBox;
@@ -19,23 +23,36 @@ public class GreenCartHomePage extends TestBase{
 	@CacheLookup
 	WebElement searchButton;
 
-	@FindBy(xpath = ObjectRepository.productNameXpath)
+	@FindBy(linkText = ObjectRepository.topDealsLink)
 	@CacheLookup
-	List<WebElement> productName;
-	
-	@FindBy(xpath = ObjectRepository.addToCartXpath)
+	WebElement topDeals;
+
+	@FindBy(linkText = ObjectRepository.flightBookingLink)
 	@CacheLookup
-	WebElement addToCart;
-	
+	WebElement flightBooking;
+
 	@FindBy(xpath = ObjectRepository.cartButtonXpath)
 	@CacheLookup
 	WebElement cartButton;
 	
-	@FindBy(xpath = ObjectRepository.proceedToCheckOutButtonXpath)
-	@CacheLookup
-	WebElement proceedToCheckOutButton;
+	
+	public void validateURL() {
+		String actURL = driver.getCurrentUrl();
 
-	public void validatingTitle(String expTitle) {
+		if(actURL.equals(config.getProperty("url"))) {
+			System.out.println("Both Actual and Expected URL's are same");
+			System.out.println("URL of Green Kart page is : " + actURL);
+			System.out.println();
+		}
+		else {
+			System.out.println("Both Actual and Expected URL's are not same");
+			System.out.println("Expected URL of Green Kart page is : " + config.getProperty("url"));
+			System.out.println("Actual URL of Green Kart page is : " + actURL);
+			System.out.println();
+		}
+	}
+
+	public void validateTitle(String expTitle) {
 		String actTitle = driver.getTitle();
 
 		if(actTitle.equals(expTitle)) {
@@ -51,7 +68,8 @@ public class GreenCartHomePage extends TestBase{
 		}
 	}
 
-	public void itemsOnHomePage() {
+	public void validateitemsOnHomePage() {
+		System.out.println("Items on Home Page are as follows:");
 		for (WebElement productNames : productName) {
 			String itemName = productNames.getText();
 			System.out.print(itemName + " ; ");
@@ -60,24 +78,66 @@ public class GreenCartHomePage extends TestBase{
 		System.out.println();
 	}
 
-	public void searchItem() {
-		searchBox.sendKeys("Beans");
-		searchButton.click();
-		System.out.println("Search Results for Beans are displayed");
+	public void validateSearchBox(String enterItemName) {
+		if(searchBox.isDisplayed()) {
+			System.out.println("Search Box is present on Green Cart Home Page");
+			searchBox.sendKeys(enterItemName);
+			System.out.println(enterItemName + " is added in search box");
+		}
+		else {
+			System.out.println("Search Box is not present on Green Cart Home Page");
+		}
 	}
-	
-	public void addSearchItemToCart() {
-		addToCart.click();
-		System.out.println("Beans added to cart");
-		searchBox.clear();
-		System.out.println("Search Cleared");
-		System.out.println();
+
+	public void validateSearchButton() {
+		if(searchButton.isDisplayed()) {
+			System.out.println("Search Button is present on Green Cart Home Page");
+			searchButton.click();
+			System.out.println("Search Button is clicked and Results are displayed");
+			System.out.println();
+		}
+		else {
+			System.out.println("Search Button is not present on Green Cart Home Page");
+			System.out.println();
+		}
 	}
-	
-	public void validateCart() {
-		cartButton.click();
-		proceedToCheckOutButton.click();
-		System.out.println("Successfull Naviagted to CheckOut page");
+
+	public void validateTopDealsLink() {
+		if(topDeals.isDisplayed()) {
+			System.out.println("Top Deals Link is present on Green Cart Home Page");
+			topDeals.click();
+			System.out.println("Successfully Navigated to Top Deals page");
+			System.out.println();
+		}
+		else {
+			System.out.println("Top Deals Link is not present on Green Cart Home Page");
+			System.out.println();
+		}
+	}
+
+	public void validateFlightBookingLink() {
+		if(flightBooking.isDisplayed()) {
+			System.out.println("Flight Booking Link is present on Green Cart Home Page");
+			searchButton.click();
+			System.out.println("Successfully Navigated to Flight Booking page");
+			System.out.println();
+		}
+		else {
+			System.out.println("Flight Booking Link is not present on Green Cart Home Page");
+			System.out.println();
+		}
+	}
+
+	public void validateCartButton() {
+		if(cartButton.isDisplayed()) {
+			cartButton.click();
+			System.out.println("Cart Button is present on Green Cart Home Page");
+			System.out.println();
+		}
+		else {
+			System.out.println("Cart Button is not present on Green Cart Home Page");
+			System.out.println();
+		}
 	}
 
 }
